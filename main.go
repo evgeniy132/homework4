@@ -9,14 +9,12 @@ var text string
 var textRedactor []string = []string{"seafood", "food", "c", "central"}
 
 func Search(textRedactor []string, search string) []string {
-	var Complete []string
+	var Complete = make([]string, 0, len(textRedactor))
 	for _, v := range textRedactor {
 		if strings.Contains(v, search) {
 			Complete = append(Complete, v)
 		}
-
 	}
-
 	return Complete
 }
 
